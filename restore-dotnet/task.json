@@ -1,0 +1,40 @@
+{
+  "id": "b1dd8d43-07ed-4794-8bbd-48acdc9fb787",
+  "name": "PCRestoreDotNetCore",
+  "friendlyName": "Restore dotnet core application packages",
+  "description": "Restore dotnet core application packages",
+  "author": "Luis Fraile",
+  "helpMarkDown": "__Restore__ dotnet core application packages",
+  "category": "Build",
+  "visibility": [
+    "Build",
+    "Release"
+  ],a
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "2",
+    "Patch": "6"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "restore-dotnet $(projectPath)",
+  "inputs": [
+    {
+      "name": "projectPath",
+      "type": "filePath",
+      "label": "Root directory for package restoration",
+      "defaultValue": "",
+      "required": false,
+      "helpMarkDown": "Working Directory containing __project.json__ or __global.json__"
+    }
+  ],
+  "execution": {   
+    "PowerShell3": {
+      "target": "restore-dotnet.ps1"
+    }
+    , "Node": {
+      "target": "restore-dotnet.js",
+      "argumentFormat": ""
+    }
+  }
+}

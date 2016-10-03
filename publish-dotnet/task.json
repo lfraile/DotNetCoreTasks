@@ -1,0 +1,48 @@
+{
+  "id": "6e533185-fec6-42be-b703-94ddbba1c992",
+  "name": "PCPublishDotNetCore",
+  "friendlyName": "Publish Dotnet Core app",
+  "description": "Publish Dotnet Core app",
+  "author": "Luis Fraile",
+  "helpMarkDown": "__Publish__ dotnet core application packages",
+  "category": "Deploy",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "6"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "publish-dotnet $(projectPath) -o $(folderForPublish)",
+  "inputs": [
+    {
+      "name": "projectPath",
+      "type": "filePath",
+      "label": "Working Directory containing project.json",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Working Directory containing project.json"
+    },
+     {
+      "name": "folderForPublish",
+      "type": "string",
+      "label": "Destination directory for publish",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Destination directory for publish"
+    }
+  ],
+  "execution": {   
+    "PowerShell3": {
+      "target": "publish-dotnet.ps1"
+    }
+    , "Node": {
+      "target": "publish-dotnet.js",
+      "argumentFormat": ""
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+    "manifestVersion": 1,
+    "id": "build-dotnetcore-tasks",
+    "name": "Build dotnet core tasks",
+    "version": "0.0.9",
+    "publisher": "luisfraile",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Tasks for restore, build and publish dotnet core projects",
+    "categories": [
+        "Build and release"
+    ],
+    "icons": {
+        "default": "extension-icon.png"        
+    },
+    "files": [
+        {
+            "path": "restore-dotnet"
+        },
+        {
+            "path": "build-dotnet"
+        },
+        {
+            "path": "publish-dotnet"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "PCRestoreDotNetCore",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "restore-dotnet"
+            }
+        },
+        {
+            "id": "PCBuildDotnetCore",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "build-dotnet"
+            }
+        },
+        {
+            "id": "PCPublishDotNetCore",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "publish-dotnet"
+            }
+        }
+    ]
+}
