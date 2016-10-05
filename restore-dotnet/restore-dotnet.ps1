@@ -14,7 +14,7 @@ try {
 catch{
     $ErrorMessage = $_.Exception.Message
     Write-VstsTaskError $ErrorMessage
-    Write-VstsSetResult -Result Failed
+    Write-VstsSetResult -Result Failed -Message "Failed restoring packages"
 }
 finally {
     Trace-VstsLeavingInvocation $MyInvocation  

@@ -1,11 +1,11 @@
 "use strict";
-var tl = require('vsts-task-lib');
+let tl = require('vsts-task-lib');
 
-var cmd = 'dotnet';
+const cmd = 'dotnet';
 
-var pathToProjectJson = tl.getPathInput('projectPath',true,false);
+let pathToProjectJson = tl.getPathInput('projectPath',true,false);
 
-tl.exec(cmd,'restore ' + pathToProjectJson).then().fail(function(err) {
+tl.exec(cmd,'restore ' + pathToProjectJson).fail(function(err) {
     console.log(`##vso[task.logissue type=error;]${err}`);   
-    tl.setResult(1,'Failed restoring the packages');
+    tl.setResult(tl.TaskResult.Failed,'Failed restoring the packages');
 });   

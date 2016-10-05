@@ -1,0 +1,15 @@
+{
+  "name": "restore-dotnet-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "restore-dotnet.js",
+  "dependencies": {
+    "vsts-task-lib": "^0.9.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

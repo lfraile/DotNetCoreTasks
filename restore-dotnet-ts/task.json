@@ -14,7 +14,7 @@
   "version": {
     "Major": "0",
     "Minor": "2",
-    "Patch": "9"
+    "Patch": "6"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "restore-dotnet $(projectPath)",

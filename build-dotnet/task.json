@@ -14,7 +14,7 @@
   "version": {
     "Major": "0",
     "Minor": "1",
-    "Patch": "6"
+    "Patch": "7"
   },
   "minimumAgentVersion": "1.95.0",
 "instanceNameFormat": "build-dotnet $(projectPath)",
@@ -32,7 +32,8 @@
     "PowerShell3": {
       "target": "build-dotnet.ps1"
     }
-    , "Node": {
+    , 
+    "Node": {
       "target": "build-dotnet.js",
       "argumentFormat": ""
     }
