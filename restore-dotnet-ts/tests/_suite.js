@@ -7,30 +7,29 @@ describe('Sample task tests', function () {
     });
     after(() => {
     });
-    it('should succeed with simple inputs', (done) => {
+    it('Ejecuta correcto si dotnet devuelve 0', (done) => {
         let tp = path.join(__dirname, 'success.js');
         let tr = new ttm.MockTestRunner(tp);
         tr.run();
-        assert(tr.succeeded, 'should have succeeded');
-        // assert.equal(tr.invokedToolCount, 1);
-        // assert.equal(tr.warningIssues.length, 0, "should have no warnings");
-        // assert.equal(tr.errorIssues.length, 0, "should have no errors");
-        // assert(tr.stdout.indexOf('atool output here') >= 0, "tool stdout");
+        assert(tr.succeeded, 'Dotnet ha funcionado');
+        assert.equal(tr.invokedToolCount, 1);
+        assert.equal(tr.warningIssues.length, 0, "No ha habido warnings");
+        assert.equal(tr.errorIssues.length, 0, "No ha habido errores");
+        assert(tr.stdout.indexOf('dotnet output') >= 0, "tool stdout");
         done();
     });
-    // it('it should fail if tool returns 1', (done: MochaDone) => {
-    //     this.timeout(1000);
-    //     let tp = path.join(__dirname, 'failrc.js');
-    //     let tr: ttm.MockTestRunner = new ttm.MockTestRunner(tp);
-    //     tr.run();
-    //     assert(!tr.succeeded, 'should have failed');
-    //     assert.equal(tr.invokedToolCount, 1);
-    //     assert.equal(tr.warningIssues, 0, "should have no warnings");
-    //     assert.equal(tr.errorIssues.length, 1, "should have 1 error issue");
-    //     assert.equal(tr.errorIssues[0], '/mocked/tools/echo failed with return code: 1', 'error issue output');
-    //     assert(tr.stdout.indexOf('atool output here') >= 0, "tool stdout");
-    //     assert.equal(tr.stdout.indexOf('Hello Mock!'), -1, "task module should have never been called");
-    //     done();
-    // });    
+    it('Lanza fallo si dotnet devuelve 1', (done) => {
+        this.timeout(1000);
+        let tp = path.join(__dirname, 'failrc.js');
+        let tr = new ttm.MockTestRunner(tp);
+        tr.run();
+        assert(!tr.succeeded, 'Dotnet ha fallado');
+        assert.equal(tr.invokedToolCount, 1);
+        assert.equal(tr.warningIssues, 0, "No ha habido warnings");
+        assert.equal(tr.errorIssues.length, 1, "Ha ocurrido un error");
+        assert.equal(tr.errorIssues[0], '/mocked/tools/dotnet failed with return code: 1', 'error issue output');
+        assert(tr.stdout.indexOf('dotnet output') >= 0, "tool stdout");
+        done();
+    });
 });
 //# sourceMappingURL=_suite.js.map

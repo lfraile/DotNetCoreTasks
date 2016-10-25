@@ -1,8 +1,8 @@
 {
-  "id": "b1dd8d43-07ed-4794-8bbd-48acdc9fb787",
-  "name": "PCRestoreDotNetCore",
-  "friendlyName": "Restore dotnet core application packages",
-  "description": "Restore dotnet core application packages",
+  "id": "4759dac9-0907-4575-ae28-98e293e11a72",
+  "name": "PCRestDotNetCoreTS",
+  "friendlyName": "Restore dotnet core app packages (TS)",
+  "description": "Restore dotnet core application packages (TS)",
   "author": "Luis Fraile",
   "helpMarkDown": "__Restore__ dotnet core application packages",
   "category": "Build",

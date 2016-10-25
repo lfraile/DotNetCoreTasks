@@ -14,8 +14,8 @@ let a: ma.TaskLibAnswers = <ma.TaskLibAnswers>{
     "exec": {
         "echo restore /foo": {
             "code": 0,
-            "stdout": "atool output here",
-            "stderr": "atool with this stderr output"            
+            "stdout": "dotnet output",
+            "stderr": "dotnet with this stderr output"            
         }
     }
 };

@@ -3,6 +3,7 @@ let tl = require('vsts-task-lib');
 
 const cmd = 'dotnet';
 
+
 let pathToProjectJson = tl.getPathInput('projectPath',true,false);
 
 tl.exec(cmd,'restore ' + pathToProjectJson).fail(function(err) {
